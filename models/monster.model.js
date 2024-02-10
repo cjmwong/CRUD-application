@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const MonsterSchema = new mongoose.Schema(
     {
-        "id": {type: Number, required: true},
+        "_id": {type: Number, required: true},
         "name": {type: String, required: true},
         "username": {type: String, required: true},
         "email": {type: String, required: true},
@@ -27,4 +27,6 @@ const MonsterSchema = new mongoose.Schema(
     },
 )
 
-export const Monster = mongoose.model("Monster", MonsterSchema)
+const Collection = mongoose.model("Monsters", MonsterSchema)
+
+export default Collection;

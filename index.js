@@ -1,9 +1,19 @@
 import express from "express";
-
+import bodyParser from "body-parser";
+import monsters from "./routes/monster.route.js"
+import { connectDB } from "./database/database.js";
 
 const app = express();
-const port = 3000;
+const port = 8080;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+
+connectDB();
+
+app.use("/monster", monsters)
 
 app.listen(port, () =>{
-    console.log("Listening on Port 3000.");
+    console.log("Listening on Port 8080.");
 });
