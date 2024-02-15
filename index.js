@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 connectDB();
 
-app.use("/monster", monsters)
+app.use("/", monsters);
 
 app.listen(port, () =>{
     console.log("Listening on Port 10000.");
